@@ -1,0 +1,18 @@
+{
+	"targets": [
+		"blur",
+		"swap"
+	],
+	"passes": [
+		{
+			"name": "movementvision:blur_width",
+			"intarget": "minecraft:main",
+			"outtarget": "blur"
+		},
+		{
+			"name": "movementvision:blur_height",
+			"intarget": "blur",
+			"outtarget": "minecraft:main"
+		}
+	]
+}

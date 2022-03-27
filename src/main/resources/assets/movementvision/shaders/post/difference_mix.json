@@ -1,0 +1,17 @@
+{
+	"targets": [
+		"swap"
+	],
+	"passes": [
+		{
+			"name": "movementvision:difference_mix",
+			"intarget": "minecraft:main",
+			"outtarget": "swap"
+		},
+		{
+			"name": "blit",
+			"intarget": "swap",
+			"outtarget": "minecraft:main"
+		}
+	]
+}

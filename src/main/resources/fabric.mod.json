@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "movementvision",
+	"version": "${version}",
+	"name": "Movement Vision",
+	"description": "What if you could only see movement?",
+	"authors": [
+		"LudoCrypt"
+	],
+	"contact": {
+		"homepage": "https://www.curseforge.com/minecraft/mc-mods/movement-vision",
+		"sources": "https://github.com/LudoCrypt/movement-vision",
+		"issues": "https://github.com/LudoCrypt/movement-vision/issues"
+	},
+	"license": "LGPLv3",
+	"icon": "assets/movementvision/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"net.ludocrypt.movementvision.MovementVision"
+		],
+		"modmenu": [
+			"net.ludocrypt.movementvision.config.MovementConfigModMenu"
+		]
+	},
+	"mixins": [
+		"movementvision.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.11.3",
+		"fabric": "*",
+		"satin": ">=1.7.2",
+		"cloth-config": "*"
+	}
+}

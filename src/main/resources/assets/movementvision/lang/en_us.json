@@ -1,0 +1,15 @@
+{
+	"text.autoconfig.movement_vision.title": "Movement Vision Config",
+	"text.autoconfig.movement_vision.option.enabled": "Enabled",
+	"text.autoconfig.movement_vision.option.blurRadius": "Blur Radius",
+	"text.autoconfig.movement_vision.option.trail": "Trail",
+	"text.autoconfig.movement_vision.option.alpha": "Alpha",
+	"text.autoconfig.movement_vision.option.blurCount": "Blur Count",
+	"text.autoconfig.movement_vision.option.brightness": "Brightness",
+	"text.autoconfig.movement_vision.option.contrast": "Contrast",
+	"text.autoconfig.movement_vision.option.monotone": "Monotone",
+	"text.autoconfig.movement_vision.option.tint": "Tint (Collapsable)",
+	"text.autoconfig.movement_vision.option.tint.r": "Tint Red",
+	"text.autoconfig.movement_vision.option.tint.g": "Tint Green",
+	"text.autoconfig.movement_vision.option.tint.b": "Tint Blue"
+}
