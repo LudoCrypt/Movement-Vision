@@ -8,6 +8,8 @@ uniform int monotone;
 uniform float brightness;
 uniform float contrast;
 
+uniform float delta;
+
 in vec2 texCoord;
 
 out vec4 fragColor;
@@ -15,10 +17,14 @@ out vec4 fragColor;
 void main() {
 	vec4 movementVision = texture(DiffuseSampler, texCoord);
 	vec4 colorCorrected = ((movementVision - 0.5) * vec4(contrast)) + 0.5 + vec4(brightness);
-	
+
+	vec4 tintedColor;
+
 	if (monotone == 1) {
-		fragColor = colorCorrected * vec4(tint, 1.0);
+		tintedColor = colorCorrected * vec4(tint, 1.0);
 	} else {
-		fragColor = colorCorrected * texture(PrevSampler, texCoord) * vec4(tint, 1.0);
+		tintedColor = colorCorrected * texture(PrevSampler, texCoord) * vec4(tint, 1.0);
 	}
+
+	fragColor = mix(tintedColor, texture(PrevSampler, texCoord), delta);
 }

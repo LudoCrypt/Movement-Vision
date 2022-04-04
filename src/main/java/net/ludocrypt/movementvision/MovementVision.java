@@ -3,12 +3,15 @@ package net.ludocrypt.movementvision;
 import ladysnake.satin.api.managed.ManagedShaderEffect;
 import ladysnake.satin.api.managed.ShaderEffectManager;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
 import net.ludocrypt.movementvision.config.MovementConfig;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gl.Framebuffer;
 import net.minecraft.util.Identifier;
 
 public class MovementVision implements ClientModInitializer {
+
+	public static final boolean IS_INCAPACITATED_INSTALLED = FabricLoader.getInstance().isModLoaded("incapacitated");
 
 	private static final MinecraftClient client = MinecraftClient.getInstance();
 	public static Framebuffer previousBufferBuffer;

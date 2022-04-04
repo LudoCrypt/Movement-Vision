@@ -5,12 +5,13 @@ import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
-import net.ludocrypt.movementvision.util.Vector3Float;
 
 @Config(name = "movement_vision")
 public class MovementConfig implements ConfigData {
 
 	public boolean enabled = true;
+
+	public boolean alwaysOn = false;
 
 	public float blurRadius = 1.0F;
 
@@ -27,7 +28,10 @@ public class MovementConfig implements ConfigData {
 	public boolean monotone = true;
 
 	@ConfigEntry.Gui.CollapsibleObject()
-	public Vector3Float tint = new Vector3Float(0.4784F, 0.5686F, 0.5098F);
+	public VectorTint tint = new VectorTint(0.4784F, 0.5686F, 0.5098F);
+
+	@ConfigEntry.Gui.CollapsibleObject()
+	public IncapacitatedCompat incapacitatedSupport = new IncapacitatedCompat();
 
 	public static void init() {
 		AutoConfig.register(MovementConfig.class, GsonConfigSerializer::new);
@@ -35,6 +39,28 @@ public class MovementConfig implements ConfigData {
 
 	public static MovementConfig getInstance() {
 		return AutoConfig.getConfigHolder(MovementConfig.class).getConfig();
+	}
+
+	public static class VectorTint {
+
+		public float r, g, b;
+
+		public VectorTint(float r, float g, float b) {
+			this.r = r;
+			this.g = g;
+			this.b = b;
+		}
+
+	}
+
+	public static class IncapacitatedCompat {
+
+		public boolean enabled = true;
+
+		public boolean brighten = false;
+
+		public boolean clamp = true;
+
 	}
 
 }

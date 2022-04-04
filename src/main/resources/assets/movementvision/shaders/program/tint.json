@@ -83,6 +83,14 @@
 			"values": [
 				1.0
 			]
+		},
+		{
+			"name": "delta",
+			"type": "float",
+			"count": 1,
+			"values": [
+				0.0
+			]
 		}
 	]
 }
